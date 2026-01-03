@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML ka complete guide - har concept ek page mein">
+    <meta name="keywords" content="HTML, tutorial, learning">
+    <meta name="author" content="HTML Student">
+    <title>HTML Complete Guide - Pure HTML Only</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>🎓 HTML Complete Learning Guide (Pure HTML - No CSS)</h1>
+        <p><strong>Iss page mein HTML ke saare important concepts hain - Sirf HTML!</strong></p>
+        <hr>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Quick Navigation:</h2>
+        <ul>
+            <li><a href="#headings">Headings</a></li>
+            <li><a href="#text">Text Formatting</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#semantic">Semantic HTML</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <!-- 1. Headings -->
+    <section id="headings">
+        <h2>1. Headings (Sheershan)</h2>
+        <h1>Heading 1 - Sabse Bada</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6 - Sabse Chhota</h6>
+        <p><em>Note: H1 se H6 tak 6 headings hote hain. H1 sabse important aur H6 sabse kam important.</em></p>
+        <hr>
+    </section>
+
+    <!-- 2. Paragraphs and Line Breaks -->
+    <section id="paragraphs">
+        <h2>2. Paragraphs aur Line Breaks</h2>
+        <p>Yeh ek paragraph hai. Paragraph tag se hum text ko organize karte hain.</p>
+        <p>Yeh doosra paragraph hai. Har paragraph apne aap naya line mein start hota hai.</p>
+        <p>Line break ka example:<br>Yeh line break ke baad ka text hai<br>Ek aur line break</p>
+        <hr>
+    </section>
+
+    <!-- 3. Text Formatting -->
+    <section id="text">
+        <h2>3. Text Formatting (Likhai ka Style)</h2>
+        <p>Yeh ek <strong>bold text</strong> hai (strong tag se - important)</p>
+        <p>Yeh ek <b>bold text</b> hai (b tag se - sirf styling)</p>
+        <p>Yeh ek <em>italic text</em> hai (em tag se - emphasis)</p>
+        <p>Yeh ek <i>italic text</i> hai (i tag se - sirf styling)</p>
+        <p>Yeh ek <mark>highlighted text</mark> hai</p>
+        <p>Yeh ek <small>chhota text</small> hai</p>
+        <p>Yeh ek <del>kataa hua text (deleted)</del> hai</p>
+        <p>Yeh ek <ins>underlined text (inserted)</ins> hai</p>
+        <p>Subscript: H<sub>2</sub>O (paani ka formula)</p>
+        <p>Superscript: X<sup>2</sup> + Y<sup>2</sup> (power/exponent)</p>
+        <p><s>Strike through text</s></p>
+        <p><u>Underlined text</u></p>
+        <blockquote>"Yeh ek quote hai jo kisi aur ne bola" - Famous Person</blockquote>
+        <p>Code dikhane ke liye: <code>console.log("Hello World")</code></p>
+        <pre>
+    Yeh pre-formatted text hai
+    Isme saari spaces aur
+    line breaks maintain hote hain
+    Exactly jaise likhe hain
+        </pre>
+        <p>Keyboard input: Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy</p>
+        <p>Sample output: <samp>Error 404: Page not found</samp></p>
+        <p>Variable: <var>x</var> = 10</p>
+        <hr>
+    </section>
+
+    <!-- 4. Lists -->
+    <section id="lists">
+        <h2>4. Lists (Soochiyan)</h2>
+        
+        <h3>A) Unordered List (Bullet Points):</h3>
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+            <li>Mango</li>
+        </ul>
+
+        <h3>B) Ordered List (Numbered):</h3>
+        <ol>
+            <li>Pehla Step</li>
+            <li>Doosra Step</li>
+            <li>Teesra Step</li>
+            <li>Chautha Step</li>
+        </ol>
+
+        <h3>C) Ordered List with type attribute:</h3>
+        <ol type="A">
+            <li>Type A (Capital letters)</li>
+            <li>Dusra item</li>
+        </ol>
+        <ol type="a">
+            <li>Type a (Small letters)</li>
+            <li>Dusra item</li>
+        </ol>
+        <ol type="I">
+            <li>Type I (Roman numerals)</li>
+            <li>Dusra item</li>
+        </ol>
+
+        <h3>D) Description List (Term aur Definition):</h3>
+        <dl>
+            <dt><strong>HTML</strong></dt>
+            <dd>HyperText Markup Language - Web pages banane ki language</dd>
+            
+            <dt><strong>CSS</strong></dt>
+            <dd>Cascading Style Sheets - Styling ke liye</dd>
+            
+            <dt><strong>JavaScript</strong></dt>
+            <dd>Programming language - Interactivity ke liye</dd>
+        </dl>
+
+        <h3>E) Nested List (List ke andar List):</h3>
+        <ul>
+            <li>Fruits
+                <ul>
+                    <li>Apple</li>
+                    <li>Mango</li>
+                    <li>Banana</li>
+                </ul>
+            </li>
+            <li>Vegetables
+                <ul>
+                    <li>Potato</li>
+                    <li>Tomato</li>
+                    <li>Onion</li>
+                </ul>
+            </li>
+            <li>Dairy
+                <ol>
+                    <li>Milk</li>
+                    <li>Cheese</li>
+                    <li>Butter</li>
+                </ol>
+            </li>
+        </ul>
+        <hr>
+    </section>
+
+    <!-- 5. Links -->
+    <section id="links">
+        <h2>5. Links (Hyperlinks / Jodne wale Rasste)</h2>
+        <p><a href="https://www.google.com">Google pe jao (Same tab mein)</a></p>
+        <p><a href="https://www.google.com" target="_blank">Google pe jao (Naye tab mein - target="_blank")</a></p>
+        <p><a href="#headings">Is page ke Headings section pe jao (Internal link)</a></p>
+        <p><a href="#top">Page ke top pe jao</a></p>
+        <p><a href="mailto:example@email.com">Email bhejo (Opens email client)</a></p>
+        <p><a href="tel:+919876543210">Phone karo (Mobile mein dial karega)</a></p>
+        <p><a href="https://www.example.com" title="Yeh ek tooltip hai">Hover karo mujh par aur tooltip dekho</a></p>
+        <p><a href="https://www.example.com" download>Download karo (download attribute)</a></p>
+        <hr>
+    </section>
+
+    <!-- 6. Images -->
+    <section id="images">
+        <h2>6. Images (Tasveerein)</h2>
+        
+        <h3>Basic Image:</h3>
+        <img src="https://via.placeholder.com/400x200/4169E1/ffffff?text=HTML+Learning" 
+             alt="Yeh image load nahi hui toh yeh text dikhega" 
+             width="400" 
+             height="200"
+             title="Hover karne par yeh tooltip dikhta hai">
+        
+        <p><em>Note: alt attribute zaroori hai - accessibility ke liye aur agar image load na ho</em></p>
+        
+        <h3>Small Image:</h3>
+        <img src="https://via.placeholder.com/150x150/FF6347/ffffff?text=Small" 
+             alt="Chhoti image" 
+             width="150" 
+             height="150">
+        
+        <h3>Image as Link (Click karne par kahi aur jata hai):</h3>
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://via.placeholder.com/200x100/32CD32/ffffff?text=Click+Me" 
+                 alt="Clickable Image - Google pe jayega">
+        </a>
+
+        <h3>Figure with Caption:</h3>
+        <figure>
+            <img src="https://via.placeholder.com/300x200/FF69B4/ffffff?text=Sample+Photo" 
+                 alt="Sample photo">
+            <figcaption>Yeh image ka caption/description hai (Figure tag se)</figcaption>
+        </figure>
+        <hr>
+    </section>
+
+    <!-- 7. Tables -->
+    <section id="tables">
+        <h2>7. Tables (Taalike)</h2>
+        
+        <h3>Basic Table:</h3>
+        <table border="1">
+            <caption><strong>Student Records</strong></caption>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Rahul</td>
+                    <td>Math</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Priya</td>
+                    <td>Science</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Amit</td>
+                    <td>English</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sneha</td>
+                    <td>Hindi</td>
+                    <td>88</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Average Marks</strong></td>
+                    <td><strong>85.75</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Table with Rowspan and Colspan:</h3>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Phone Numbers (2 columns merge)</th>
+            </tr>
+            <tr>
+                <td>Raj</td>
+                <td>9876543210</td>
+                <td>9876543211</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Simran (2 rows merge)</td>
+                <td>9999999999</td>
+                <td>8888888888</td>
+            </tr>
+            <tr>
+                <td>7777777777</td>
+                <td>6666666666</td>
+            </tr>
+        </table>
+        <hr>
+    </section>
+
+    <!-- 8. Forms -->
+    <section id="forms">
+        <h2>8. Forms (Bharne wale Patra)</h2>
+        
+        <form action="#" method="post">
+            <fieldset>
+                <legend><strong>Registration Form</strong></legend>
+                
+                <p>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" placeholder="Apna username likho" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </p>
+
+                <p>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" placeholder="Strong password" required>
+                </p>
+
+                <p>
+                    <label for="age">Age (Umra):</label><br>
+                    <input type="number" id="age" name="age" min="1" max="120" value="18">
+                </p>
+
+                <p>
+                    <label for="dob">Date of Birth:</label><br>
+                    <input type="date" id="dob" name="dob">
+                </p>
+
+                <p>
+                    <label for="time">Time:</label><br>
+                    <input type="time" id="time" name="time">
+                </p>
+
+                <p>
+                    <label for="color">Favorite Color:</label><br>
+                    <input type="color" id="color" name="color" value="#ff0000">
+                </p>
+
+                <p>
+                    <label for="range">Range (1-100):</label><br>
+                    <input type="range" id="range" name="range" min="1" max="100" value="50">
+                </p>
+
+                <p>
+                    <label for="url">Website URL:</label><br>
+                    <input type="url" id="url" name="url" placeholder="https://example.com">
+                </p>
+
+                <p>
+                    <label for="tel">Phone Number:</label><br>
+                    <input type="tel" id="tel" name="tel" placeholder="9876543210">
+                </p>
+
+                <p>
+                    <label for="search">Search:</label><br>
+                    <input type="search" id="search" name="search" placeholder="Search karo">
+                </p>
+
+                <p>
+                    <label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </p>
+
+                <p>
+                    <label>Hobbies (Multiple select kar sakte ho):</label><br>
+                    <input type="checkbox" id="reading" name="hobby1" value="reading">
+                    <label for="reading">Reading</label><br>
+                    <input type="checkbox" id="sports" name="hobby2" value="sports">
+                    <label for="sports">Sports</label><br>
+                    <input type="checkbox" id="music" name="hobby3" value="music">
+                    <label for="music">Music</label><br>
+                    <input type="checkbox" id="coding" name="hobby4" value="coding" checked>
+                    <label for="coding">Coding</label>
+                </p>
+
+                <p>
+                    <label for="country">Country (Desh):</label><br>
+                    <select id="country" name="country" required>
+                        <option value="">-- Select Country --</option>
+                        <option value="india">India</option>
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="canada">Canada</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="city">City (Multiple select):</label><br>
+                    <select id="city" name="city" multiple size="4">
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="kolkata">Kolkata</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="message">Message / Comments:</label><br>
+                    <textarea id="message" name="message" rows="5" cols="50" placeholder="Apna message yahan likho..."></textarea>
+                </p>
+
+                <p>
+                    <label for="file">Upload File:</label><br>
+                    <input type="file" id="file" name="file">
+                </p>
+
+                <p>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to terms and conditions</label>
+                </p>
+
+                <p>
+                    <button type="submit">Submit Form</button>
+                    <button type="reset">Reset Form</button>
+                    <input type="button" value="Simple Button" onclick="alert('Button clicked!')">
+                </p>
+            </fieldset>
+        </form>
+        <hr>
+    </section>
+
+    <!-- 9. Semantic HTML -->
+    <section id="semantic">
+        <h2>9. Semantic HTML (Meaningful Tags)</h2>
+        <p>Semantic tags se HTML ka meaning clear hota hai</p>
+        
+        <article>
+            <header>
+                <h3>Article Header</h3>
+                <p>Published on: January 3, 2026</p>
+            </header>
+            <p>Yeh ek article hai. Article tag independent content ke liye use hota hai jaise blog post, news article, etc.</p>
+            <footer>
+                <p>Article ka footer - Author: John Doe</p>
+            </footer>
+        </article>
+
+        <aside>
+            <h4>Aside Section</h4>
+            <p>Yeh side content hai jo main content se thoda related hai lekin separate hai. Jaise sidebar information.</p>
+        </aside>
+
+        <section>
+            <h4>Generic Section</h4>
+            <p>Section tag generic grouping ke liye use hota hai</p>
+        </section>
+
+        <details>
+            <summary><strong>Click karke details dekho (Details/Summary tag)</strong></summary>
+            <p>Yeh hidden content hai jo summary pe click karne par dikhta hai!</p>
+            <p>Accordion jaise functionality ke liye best hai</p>
+        </details>
+        <hr>
+    </section>
+
+    <!-- 10. Media -->
+    <section id="media">
+        <h2>10. Media Elements (Audio/Video)</h2>
+        
+        <h3>Video Element:</h3>
+        <video width="400" controls poster="https://via.placeholder.com/400x200/4169E1/ffffff?text=Video+Poster">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+            Aapka browser video tag support nahi karta.
+        </video>
+        <p>Controls attribute se play/pause buttons aate hain</p>
+
+        <h3>Audio Element:</h3>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+            Aapka browser audio tag support nahi karta.
+        </audio>
+
+        <h3>YouTube Video Embed (iframe):</h3>
+        <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+
+        <h3>Google Maps Embed:</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709653!3d19.082177513865262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890" 
+                width="600" 
+                height="250" 
+                frameborder="0" 
+                allowfullscreen="">
+        </iframe>
+        <hr>
+    </section>
+
+    <!-- 11. Divs and Spans -->
+    <section id="containers">
+        <h2>11. Div aur Span (Generic Containers)</h2>
+        
+        <h3>Div - Block Level Element:</h3>
+        <div>
+            <p>Yeh ek DIV hai. Div block-level container hai.</p>
+            <p>Har div naye line mein start hota hai aur puri width leta hai.</p>
+        </div>
+        <div>
+            <p>Yeh doosra div hai</p>
+        </div>
+
+        <h3>Span - Inline Element:</h3>
+        <p>Yeh ek paragraph hai jisme <span>yeh span</span> inline hai. Span apni jagah se content ko wrap karta hai bina naye line mein jaye.</p>
+        <p>Multiple spans: <span>First span</span> aur <span>Second span</span> same line mein hain.</p>
+        <hr>
+    </section>
+
+    <!-- 12. Special Characters -->
+    <section id="special">
+        <h2>12. Special Characters (HTML Entities)</h2>
+        <p>&lt; Less than symbol (left arrow bracket)</p>
+        <p>&gt; Greater than symbol (right arrow bracket)</p>
+        <p>&amp; Ampersand (&)</p>
+        <p>&quot; Double quote marks</p>
+        <p>&apos; Single quote / Apostrophe</p>
+        <p>&copy; Copyright symbol</p>
+        <p>&reg; Registered trademark</p>
+        <p>&trade; Trademark symbol</p>
+        <p>&#8377; Indian Rupee symbol</p>
+        <p>&euro; Euro symbol</p>
+        <p>&pound; Pound symbol</p>
+        <p>&yen; Yen symbol</p>
+        <p>&cent; Cent symbol</p>
+        <p>&hearts; Heart symbol</p>
+        <p>&spades; Spade symbol</p>
+        <p>&clubs; Club symbol</p>
+        <p>&diams; Diamond symbol</p>
+        <p>&nbsp; Non-breaking space (space jo break nahi hota)</p>
+        <hr>
+    </section>
+
+    <!-- 13. HTML5 Input Types -->
+    <section id="html5inputs">
+        <h2>13. HTML5 New Input Types</h2>
+        <form>
+            <p>
+                <label>Month Picker:</label><br>
+                <input type="month" name="month">
+            </p>
+            <p>
+                <label>Week Picker:</label><br>
+                <input type="week" name="week">
+            </p>
+            <p>
+                <label>DateTime Local:</label><br>
+                <input type="datetime-local" name="datetime">
+            </p>
+            <p>
+                <label>Hidden Input (page par nahi dikhta):</label><br>
+                <input type="hidden" name="hidden_value" value="secret_data">
+            </p>
+        </form>
+        <hr>
+    </section>
+
+    <!-- 14. Progress and Meter -->
+    <section id="progress">
+        <h2>14. Progress Bar aur Meter</h2>
+        
+        <h3>Progress Bar:</h3>
+        <p>Loading: <progress value="30" max="100">30%</progress> (30% complete)</p>
+        <p>Loading: <progress value="70" max="100">70%</progress> (70% complete)</p>
+        <p>Indeterminate: <progress></progress> (no value attribute)</p>
+
+        <h3>Meter (Gauge):</h3>
+        <p>Disk usage: <meter value="0.3">30%</meter> (Low - 30%)</p>
+        <p>Disk usage: <meter value="0.6">60%</meter> (Medium - 60%)</p>
+        <p>Disk usage: <meter value="0.9">90%</meter> (High - 90%)</p>
+        <p>Score: <meter value="6" min="0" max="10" low="3" high="7" optimum="9">6 out of 10</meter></p>
+        <hr>
+    </section>
+
+    <!-- 15. Quotations -->
+    <section id="quotes">
+        <h2>15. Quotations (Quotes)</h2>
+        
+        <h3>Blockquote (Long Quote):</h3>
+        <blockquote cite="https://www.example.com">
+            "Yeh ek lamba quote hai jo blockquote tag mein hai. 
+            Yeh usually indented dikhta hai aur bade quotes ke liye use hota hai."
+        </blockquote>
+
+        <h3>Q Tag (Short Inline Quote):</h3>
+        <p>Einstein ne kaha tha: <q>Imagination is more important than knowledge.</q></p>
+
+        <h3>Cite Tag (Title of Work):</h3>
+        <p>Maine <cite>Harry Potter</cite> book padhi hai.</p>
+
+        <h3>Abbreviation:</h3>
+        <p><abbr title="HyperText Markup Language">HTML</abbr> web pages banane ke liye use hota hai.</p>
+        <p><abbr title="World Wide Web">WWW</abbr> Tim Berners-Lee ne banaya tha.</p>
+        <hr>
+    </section>
+
+    <!-- 16. Computer Code -->
+    <section id="code">
+        <h2>16. Computer Code Elements</h2>
+        
+        <p>Inline code: <code>let x = 10;</code></p>
+        
+        <p>Code block with pre:</p>
+        <pre><code>
+function greet(name) {
+    console.log("Hello, " + name);
+}
+greet("World");
+        </code></pre>
+
+        <p>Keyboard input: Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save</p>
+        <p>Sample output: <samp>File saved successfully!</samp></p>
+        <p>Variable: The value of <var>pi</var> is approximately 3.14159</p>
+        <hr>
+    </section>
+
+    <!-- 17. Address and Time -->
+    <section id="addresstime">
+        <h2>17. Address aur Time</h2>
+        
+        <address>
+            <strong>Contact Information:</strong><br>
+            Written by: John Doe<br>
+            Email: <a href="mailto:john@example.com">john@example.com</a><br>
+            Address: 123 Main Street, Mumbai, India<br>
+            Phone: <a href="tel:+919876543210">+91-9876543210</a>
+        </address>
+
+        <p>Article published on: <time datetime="2026-01-03">January 3, 2026</time></p>
+        <p>Event time: <time datetime="2026-01-03T19:00">7:00 PM</time></p>
+        <hr>
+    </section>
+
+    <!-- 18. Horizontal Rules and Comments -->
+    <section id="misc">
+        <h2>18. Miscellaneous Elements</h2>
+        
+        <h3>Horizontal Rule (Line):</h3>
+        <p>Upar line</p>
+        <hr>
+        <p>Neeche line</p>
+
+        <h3>Comments (HTML mein dikhte hain, page par nahi):</h3>
+        <!-- Yeh ek comment hai jo page par nahi dikhega -->
+        <!-- 
+            Multi-line comment
+            Yeh bhi nahi dikhega
+        -->
+        <p>Upar comments hain jo aapko page source mein dikhenge par browser mein nahi</p>
+
+        <h3>Wbr Tag (Word Break Opportunity):</h3>
+        <p>VeryLongWordThat<wbr>CanBreak<wbr>AtThese<wbr>Points<wbr>IfNeeded</p>
+        <hr>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2>🎉 Congratulations! 🎉</h2>
+        <p><strong>Aapne HTML ke saare important concepts cover kar liye!</strong></p>
+        <p>Practice karte raho aur naye projects banao!</p>
+        <hr>
+        <address>
+            <p><strong>Contact:</strong></p>
+            <p>Email: <a href="mailto:learn@html.com">learn@html.com</a></p>
+            <p>Website: <a href="https://www.htmllearning.com">www.htmllearning.com</a></p>
+        </address>
+        <p>&copy; 2026 HTML Learning Guide. All rights reserved.</p>
+        <p><small>Last updated: January 3, 2026</small></p>
+    </footer>
+
+</body>
+</html>
