@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Guide - Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        h2 {
+            margin-top: 40px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid black;
+        }
+        
+        .property {
+            margin: 30px 0;
+        }
+        
+        .property h3 {
+            margin: 10px 0;
+        }
+        
+        .output {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 10px 0;
+            min-height: 50px;
+        }
+        
+        .explanation {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        /* Display Examples */
+        .block-demo { display: block; background: lightgray; padding: 10px; margin: 5px 0; }
+        .inline-demo { display: inline; background: lightgray; padding: 10px; }
+        .inline-block-demo { display: inline-block; background: lightgray; padding: 10px; margin: 5px; width: 100px; }
+        
+        /* Positioning Examples */
+        .relative-container { position: relative; height: 150px; background: #f0f0f0; }
+        .relative-box { position: relative; top: 20px; left: 30px; background: lightblue; padding: 10px; width: 150px; }
+        .absolute-box { position: absolute; top: 50px; right: 20px; background: lightcoral; padding: 10px; }
+        .fixed-box { position: fixed; bottom: 10px; right: 10px; background: lightgreen; padding: 10px; z-index: 1000; }
+        
+        /* Flexbox Examples */
+        .flex-container { display: flex; background: #f0f0f0; padding: 10px; margin: 10px 0; }
+        .flex-item { background: lightblue; padding: 10px; margin: 5px; }
+        
+        .flex-row { flex-direction: row; }
+        .flex-column { flex-direction: column; }
+        
+        .justify-start { justify-content: flex-start; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-around { justify-content: space-around; }
+        
+        .align-start { align-items: flex-start; height: 100px; }
+        .align-center { align-items: center; height: 100px; }
+        .align-end { align-items: flex-end; height: 100px; }
+        
+        .flex-wrap-demo { flex-wrap: wrap; width: 300px; }
+        .flex-gap { gap: 20px; }
+        
+        /* Grid Examples */
+        .grid-container { display: grid; background: #f0f0f0; padding: 10px; gap: 10px; }
+        .grid-item { background: lightcoral; padding: 20px; text-align: center; }
+        
+        .grid-3col { grid-template-columns: 1fr 1fr 1fr; }
+        .grid-auto { grid-template-columns: repeat(3, 1fr); }
+        .grid-custom { grid-template-columns: 100px 200px 1fr; }
+        .grid-rows { grid-template-rows: 100px 150px; }
+    </style>
+</head>
+<body>
+    <h1>CSS Complete Guide</h1>
+
+    <!-- DISPLAY -->
+    <h2>7. Display, Visibility & Overflow</h2>
+    
+    <div class="property">
+        <h3>display: block</h3>
+        <div class="output">
+            <div class="block-demo">Block Element 1</div>
+            <div class="block-demo">Block Element 2</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Element puri width le leta hai aur naye line pe start hota hai.<br>
+            <strong>Kab use kare:</strong> Div, headings, sections ke liye.<br>
+            <strong>Kaise kaam karta hai:</strong> Har element neeche wali line pe chala jata hai, puri horizontal space occupy karta hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>display: inline</h3>
+        <div class="output">
+            <span class="inline-demo">Inline 1</span>
+            <span class="inline-demo">Inline 2</span>
+            <span class="inline-demo">Inline 3</span>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Element sirf apne content jitna width leta hai, same line pe rehta hai.<br>
+            <strong>Kab use kare:</strong> Text ke beech elements ke liye (span, a, strong).<br>
+            <strong>Kaise kaam karta hai:</strong> Width/height set nahi kar sakte, text flow ke saath chalta hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>display: inline-block</h3>
+        <div class="output">
+            <div class="inline-block-demo">Box 1</div>
+            <div class="inline-block-demo">Box 2</div>
+            <div class="inline-block-demo">Box 3</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Inline ki tarah same line pe, but width/height set kar sakte ho.<br>
+            <strong>Kab use kare:</strong> Buttons, cards, navigation items ke liye.<br>
+            <strong>Kaise kaam karta hai:</strong> Best of both - inline flow + block properties.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>display: none</h3>
+        <div class="output">
+            <div style="background: lightgray; padding: 10px;">Visible Element</div>
+            <div style="display: none; background: lightgray; padding: 10px;">Hidden Element (display: none)</div>
+            <div style="background: lightgray; padding: 10px;">Visible Element (koi gap nahi hai)</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Element completely hide, space bhi nahi leta.<br>
+            <strong>Kab use kare:</strong> Toggle functionality, conditional rendering.<br>
+            <strong>Kaise kaam karta hai:</strong> Element DOM me hai but render nahi hota, space occupy nahi karta.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>visibility: hidden</h3>
+        <div class="output">
+            <div style="background: lightgray; padding: 10px;">Visible</div>
+            <div style="visibility: hidden; background: lightgray; padding: 10px;">Hidden (visibility: hidden)</div>
+            <div style="background: lightgray; padding: 10px;">Visible (gap hai upar)</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Element invisible but space occupy karta hai.<br>
+            <strong>Kab use kare:</strong> Jab layout disturb na ho but element hide karna ho.<br>
+            <strong>Kaise kaam karta hai:</strong> Space leta hai but dikhta nahi.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>opacity</h3>
+        <div class="output">
+            <div style="opacity: 1; background: purple; color: white; padding: 10px; margin: 5px 0;">Opacity: 1 (100% visible)</div>
+            <div style="opacity: 0.5; background: purple; color: white; padding: 10px; margin: 5px 0;">Opacity: 0.5 (50% transparent)</div>
+            <div style="opacity: 0.2; background: purple; color: white; padding: 10px; margin: 5px 0;">Opacity: 0.2 (20% visible)</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Element kitna transparent hoga (0 to 1).<br>
+            <strong>Kab use kare:</strong> Fade effects, hover states, overlays.<br>
+            <strong>Kaise kaam karta hai:</strong> 0 = fully transparent, 1 = fully visible.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>overflow: hidden</h3>
+        <div class="output">
+            <div style="width: 200px; height: 60px; border: 2px solid black; overflow: hidden;">
+                Yeh bahut lamba text hai jo box se bahar ja raha hai. Overflow hidden hai to extra content cut ho jayega aur scrollbar bhi nahi aayega. Lorem ipsum dolor sit amet.
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Extra content ko hide kar do.<br>
+            <strong>Kab use kare:</strong> Clean look chahiye, content limit karna ho.<br>
+            <strong>Kaise kaam karta hai:</strong> Jo content box se bahar hai wo cut ho jata hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>overflow: scroll</h3>
+        <div class="output">
+            <div style="width: 200px; height: 60px; border: 2px solid black; overflow: scroll;">
+                Yeh bahut lamba text hai. Scrollbar hamesha rahega chahe content chota ho ya bada. Tum scroll karke pura content padh sakte ho. Lorem ipsum dolor sit amet consectetur adipisicing.
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Hamesha scrollbar show karo.<br>
+            <strong>Kab use kare:</strong> Jab tum chahte ho user scroll karke pura content dekhe.<br>
+            <strong>Kaise kaam karta hai:</strong> Scrollbar always present (content chota ho tab bhi).
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>overflow: auto</h3>
+        <div class="output">
+            <div style="width: 200px; height: 60px; border: 2px solid black; overflow: auto;">
+                Content overflow hoga tabhi scrollbar aayega. Auto smartly decide karta hai. Yeh practical approach hai. Lorem ipsum dolor sit amet consectetur.
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Zarurat hone pe scrollbar show karo.<br>
+            <strong>Kab use kare:</strong> Most common use case - smart behavior.<br>
+            <strong>Kaise kaam karta hai:</strong> Content overflow = scrollbar, warna nahi.
+        </div>
+    </div>
+
+    <!-- POSITIONING -->
+    <h2>8. Positioning & Layering</h2>
+    
+    <div class="property">
+        <h3>position: static</h3>
+        <div class="output">
+            <div style="background: lightgray; padding: 10px;">Static Element (default position)</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Default position, normal document flow me rehta hai.<br>
+            <strong>Kab use kare:</strong> Default hai, explicitly likhne ki zarurat nahi.<br>
+            <strong>Kaise kaam karta hai:</strong> top, left properties kaam nahi karti.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>position: relative</h3>
+        <div class="output">
+            <div class="relative-container">
+                <div class="relative-box">Relative (top: 20px, left: 30px)</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Apni original position se adjust kar sakte ho.<br>
+            <strong>Kab use kare:</strong> Slight adjustments ke liye, absolute positioning ka parent.<br>
+            <strong>Kaise kaam karta hai:</strong> Original space occupied rehta hai, element move hota hai. top, right, bottom, left use kar sakte ho.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>position: absolute</h3>
+        <div class="output">
+            <div class="relative-container">
+                <div>Normal Content (gray background hai container)</div>
+                <div class="absolute-box">Absolute (top: 50px, right: 20px)</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Positioned parent ke relative me position hota hai.<br>
+            <strong>Kab use kare:</strong> Tooltips, dropdowns, overlays ke liye.<br>
+            <strong>Kaise kaam karta hai:</strong> Document flow se nikal jata hai, space occupy nahi karta. Nearest positioned parent (relative/absolute/fixed) se position hota hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>position: fixed</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px; height: 100px;">
+                Scroll karo page ko, neeche right corner me green box fixed rahega!<br>
+                <small>(Green box viewport ke saath fixed hai)</small>
+            </div>
+            <div class="fixed-box">Fixed Box</div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Viewport (screen) ke relative me fixed rehta hai.<br>
+            <strong>Kab use kare:</strong> Sticky headers, floating buttons, chat widgets.<br>
+            <strong>Kaise kaam karta hai:</strong> Scroll karne pe bhi same jagah pe rahta hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>position: sticky</h3>
+        <div class="output">
+            <div style="height: 100px; overflow: auto; border: 1px solid black;">
+                <div style="height: 50px; background: lightgray; padding: 10px;">Content upar</div>
+                <div style="position: sticky; top: 0; background: yellow; padding: 10px;">Sticky Header (scroll karo)</div>
+                <div style="height: 200px; background: lightgray; padding: 10px;">Bahut saara content neeche... scroll karo aur dekho sticky header upar stick ho jata hai!</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Scroll karne pe ek position pe stick ho jata hai.<br>
+            <strong>Kab use kare:</strong> Table headers, section headings.<br>
+            <strong>Kaise kaam karta hai:</strong> Relative ki tarah behave karta hai jab tak threshold cross na ho, phir fixed ban jata hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>top, right, bottom, left</h3>
+        <div class="output">
+            <div style="position: relative; height: 150px; background: #f0f0f0;">
+                <div style="position: absolute; top: 10px; left: 10px; background: lightblue; padding: 10px;">top: 10px, left: 10px</div>
+                <div style="position: absolute; bottom: 10px; right: 10px; background: lightcoral; padding: 10px;">bottom: 10px, right: 10px</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Positioned elements ko move karte hain.<br>
+            <strong>Kab use kare:</strong> position: relative/absolute/fixed/sticky ke saath.<br>
+            <strong>Kaise kaam karta hai:</strong> top: element ko neeche move, left: element ko right move karta hai (aur vice versa).
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>z-index</h3>
+        <div class="output">
+            <div style="position: relative; height: 120px;">
+                <div style="position: absolute; top: 20px; left: 20px; width: 100px; height: 80px; background: lightblue; z-index: 1; padding: 10px;">z-index: 1</div>
+                <div style="position: absolute; top: 40px; left: 40px; width: 100px; height: 80px; background: lightcoral; z-index: 2; padding: 10px;">z-index: 2</div>
+                <div style="position: absolute; top: 60px; left: 60px; width: 100px; height: 80px; background: lightgreen; z-index: 3; padding: 10px;">z-index: 3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Overlapping elements ka stacking order control karta hai.<br>
+            <strong>Kab use kare:</strong> Modals, dropdowns, layered designs.<br>
+            <strong>Kaise kaam karta hai:</strong> Higher z-index = upar layer me. Sirf positioned elements pe kaam karta hai.
+        </div>
+    </div>
+
+    <!-- FLEXBOX -->
+    <h2>9. Flexbox (Layout ⭐)</h2>
+    
+    <div class="property">
+        <h3>display: flex</h3>
+        <div class="output">
+            <div class="flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Container ko flexbox layout me convert karta hai.<br>
+            <strong>Kab use kare:</strong> Modern layouts, responsive design ke liye.<br>
+            <strong>Kaise kaam karta hai:</strong> Direct children automatically flex items ban jate hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>flex-direction: row</h3>
+        <div class="output">
+            <div class="flex-container flex-row">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items horizontally (left to right) arrange hote hain.<br>
+            <strong>Kab use kare:</strong> Default behavior, navigation bars.<br>
+            <strong>Kaise kaam karta hai:</strong> Main axis horizontal hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>flex-direction: column</h3>
+        <div class="output">
+            <div class="flex-container flex-column">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items vertically (top to bottom) arrange hote hain.<br>
+            <strong>Kab use kare:</strong> Vertical layouts, sidebars.<br>
+            <strong>Kaise kaam karta hai:</strong> Main axis vertical hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>justify-content: flex-start</h3>
+        <div class="output">
+            <div class="flex-container justify-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items main axis ke start me align hote hain.<br>
+            <strong>Kab use kare:</strong> Default, items left side chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> Extra space right side me chala jata hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>justify-content: center</h3>
+        <div class="output">
+            <div class="flex-container justify-center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items center me align hote hain.<br>
+            <strong>Kab use kare:</strong> Centered layouts, buttons.<br>
+            <strong>Kaise kaam karta hai:</strong> Equal space dono sides me.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>justify-content: space-between</h3>
+        <div class="output">
+            <div class="flex-container justify-between">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items ke beech equal space, edges pe nahi.<br>
+            <strong>Kab use kare:</strong> Header layouts (logo left, menu right).<br>
+            <strong>Kaise kaam karta hai:</strong> First item start pe, last item end pe, beech me equal spacing.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>justify-content: space-around</h3>
+        <div class="output">
+            <div class="flex-container justify-around">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Har item ke around equal space.<br>
+            <strong>Kab use kare:</strong> Equal distribution chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> Edges pe half space, items ke beech full space.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>align-items: flex-start</h3>
+        <div class="output">
+            <div class="flex-container align-start">
+                <div class="flex-item">Short</div>
+                <div class="flex-item" style="padding: 20px;">Tall</div>
+                <div class="flex-item">Short</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items cross axis ke start pe align.<br>
+            <strong>Kab use kare:</strong> Top alignment chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> Sab items upar align ho jate hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>align-items: center</h3>
+        <div class="output">
+            <div class="flex-container align-center">
+                <div class="flex-item">Short</div>
+                <div class="flex-item" style="padding: 20px;">Tall</div>
+                <div class="flex-item">Short</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items cross axis me center.<br>
+            <strong>Kab use kare:</strong> Vertical centering (most common).<br>
+            <strong>Kaise kaam karta hai:</strong> Height different ho to bhi center align.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>align-items: flex-end</h3>
+        <div class="output">
+            <div class="flex-container align-end">
+                <div class="flex-item">Short</div>
+                <div class="flex-item" style="padding: 20px;">Tall</div>
+                <div class="flex-item">Short</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items cross axis ke end pe align.<br>
+            <strong>Kab use kare:</strong> Bottom alignment chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> Sab items neeche align ho jate hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>align-self</h3>
+        <div class="output">
+            <div class="flex-container align-center">
+                <div class="flex-item">Normal</div>
+                <div class="flex-item" style="align-self: flex-start;">align-self: start</div>
+                <div class="flex-item" style="align-self: flex-end;">align-self: end</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Individual item ka alignment override karta hai.<br>
+            <strong>Kab use kare:</strong> Ek item ko alag align karna ho.<br>
+            <strong>Kaise kaam karta hai:</strong> Us specific item pe apply hota hai, baaki items normal alignment follow karte hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>flex-wrap: wrap</h3>
+        <div class="output">
+            <div class="flex-container flex-wrap-demo">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+                <div class="flex-item">Item 4</div>
+                <div class="flex-item">Item 5</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items next line pe wrap ho jate hain jab space nahi hota.<br>
+            <strong>Kab use kare:</strong> Responsive layouts, multiple rows chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> Container ki width se bade items automatically naye line pe chale jate hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>gap</h3>
+        <div class="output">
+            <div class="flex-container flex-gap">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items ke beech spacing (gap: 20px).<br>
+            <strong>Kab use kare:</strong> Consistent spacing chahiye bina margin ke.<br>
+            <strong>Kaise kaam karta hai:</strong> Automatically items ke beech space create karta hai. Modern aur clean approach.
+        </div>
+    </div>
+
+    <!-- GRID -->
+    <h2>10. CSS Grid (Layout ⭐)</h2>
+    
+    <div class="property">
+        <h3>display: grid</h3>
+        <div class="output">
+            <div class="grid-container grid-3col">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Container ko grid layout me convert karta hai.<br>
+            <strong>Kab use kare:</strong> 2D layouts, complex designs.<br>
+            <strong>Kaise kaam karta hai:</strong> Rows aur columns ka grid banta hai, items automatically place hote hain.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>grid-template-columns: 1fr 1fr 1fr</h3>
+        <div class="output">
+            <div class="grid-container grid-3col">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> 3 equal width columns define karta hai.<br>
+            <strong>Kab use kare:</strong> Equal width columns chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> 1fr = 1 fraction of available space. Teeno columns equal width lenge.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>grid-template-columns: repeat(3, 1fr)</h3>
+        <div class="output">
+            <div class="grid-container grid-auto">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Shorthand - 3 columns repeat karta hai.<br>
+            <strong>Kab use kare:</strong> Same size ke multiple columns.<br>
+            <strong>Kaise kaam karta hai:</strong> repeat(3, 1fr) same hai jaise 1fr 1fr 1fr likhna.
+        </div>
+    </div>
+    
+            <div class="property">
+        <h3>grid-template-columns: 100px 200px 1fr</h3>
+        <div class="output">
+            <div class="grid-container grid-custom">
+                <div class="grid-item">100px</div>
+                <div class="grid-item">200px</div>
+                <div class="grid-item">Remaining space</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Different width ke columns - fixed aur flexible mix.<br>
+            <strong>Kab use kare:</strong> Sidebar layouts, custom widths chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> First column 100px, second 200px, third remaining space le lega.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>grid-template-rows</h3>
+        <div class="output">
+            <div class="grid-container grid-3col grid-rows">
+                <div class="grid-item">Row 1 (100px height)</div>
+                <div class="grid-item">Row 1</div>
+                <div class="grid-item">Row 1</div>
+                <div class="grid-item">Row 2 (150px height)</div>
+                <div class="grid-item">Row 2</div>
+                <div class="grid-item">Row 2</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Rows ki height define karta hai.<br>
+            <strong>Kab use kare:</strong> Specific row heights chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> grid-template-rows: 100px 150px - first row 100px, second 150px.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>grid-area</h3>
+        <div class="output">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 80px 100px; gap: 10px; background: #f0f0f0; padding: 10px;">
+                <div style="grid-area: 1 / 1 / 2 / 4; background: lightblue; padding: 20px; text-align: center;">Header (spans 3 columns)</div>
+                <div style="background: lightcoral; padding: 20px; text-align: center;">Content 1</div>
+                <div style="background: lightcoral; padding: 20px; text-align: center;">Content 2</div>
+                <div style="background: lightcoral; padding: 20px; text-align: center;">Content 3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Item ko specific grid area me place karta hai.<br>
+            <strong>Kab use kare:</strong> Complex layouts, items ko span karna ho.<br>
+            <strong>Kaise kaam karta hai:</strong> grid-area: row-start / col-start / row-end / col-end. Header 3 columns span kar raha hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>gap (grid)</h3>
+        <div class="output">
+            <div class="grid-container grid-3col">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Grid items ke beech spacing (gap: 10px).<br>
+            <strong>Kab use kare:</strong> Clean spacing chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> rows aur columns ke beech automatically space create hota hai.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>place-items: center</h3>
+        <div class="output">
+            <div style="display: grid; grid-template-columns: repeat(3, 100px); height: 150px; place-items: center; background: #f0f0f0; gap: 10px; padding: 10px;">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Items ko center align karta hai (both horizontal and vertical).<br>
+            <strong>Kab use kare:</strong> Items ko center me chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> place-items = align-items + justify-items ka shorthand. Dono directions me center karta hai.
+        </div>
+    </div>
+
+    <div style="margin: 40px 0; padding: 20px; border: 2px solid black;">
+        <h3>📌 Important Notes:</h3>
+        <ul style="line-height: 2;">
+            <li><strong>Flexbox:</strong> 1D layout ke liye best (row YA column)</li>
+            <li><strong>Grid:</strong> 2D layout ke liye best (row AUR column dono)</li>
+            <li><strong>Practice tip:</strong> Browser me F12 dabao aur values change karke experiment karo</li>
+            <li><strong>Responsive:</strong> Media queries ke saath combine karo for mobile-friendly designs</li>
+        </ul>
+    </div>
+</body>
+</html>
