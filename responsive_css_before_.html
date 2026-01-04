@@ -1,0 +1,359 @@
+<!-- RESPONSIVE DESIGN -->
+    <h2>11. Responsive Design</h2>
+    
+    <h3 style="background: #333; color: white; padding: 10px; margin-top: 30px;">📱 LEVEL 1 - BEGINNERS</h3>
+    
+    <div class="property">
+        <h3>1. Viewport Meta Tag</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px;">
+                <code style="display: block; background: white; padding: 10px;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                <p style="margin-top: 10px;">Yeh tag HTML ke &lt;head&gt; section me dalna zaroori hai!</p>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Mobile devices ko batata hai ki page ko kaise display kare.<br>
+            <strong>Kab use kare:</strong> Har responsive website me - without this mobile pe zoom out dikhega.<br>
+            <strong>Kaise kaam karta hai:</strong> width=device-width (device ki width use karo), initial-scale=1.0 (zoom level 100%).
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>2. Basic Media Queries - max-width</h3>
+        <div class="output">
+            <div id="media-demo-1" style="background: lightblue; padding: 20px; text-align: center; font-weight: bold;">
+                Desktop View (Blue)
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    #media-demo-1 {
+                        background: lightcoral !important;
+                    }
+                    #media-demo-1::after {
+                        content: " → Tablet View (Red)";
+                    }
+                }
+                @media (max-width: 480px) {
+                    #media-demo-1 {
+                        background: lightgreen !important;
+                    }
+                    #media-demo-1::after {
+                        content: " → Mobile View (Green)";
+                    }
+                }
+            </style>
+            <div style="background: #f0f0f0; padding: 10px; margin-top: 10px;">
+                <code>@media (max-width: 768px) { background: red; }</code><br>
+                <code>@media (max-width: 480px) { background: green; }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> max-width matlab "jab screen is size se CHOTI ho".<br>
+            <strong>Kab use kare:</strong> Desktop-first approach me - bade se chhote ki taraf.<br>
+            <strong>Kaise kaam karta hai:</strong> Browser window resize karo aur color change dekho! 768px se neeche red, 480px se neeche green.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>3. Basic Media Queries - min-width (Mobile-First) ⭐</h3>
+        <div class="output">
+            <div id="media-demo-2" style="background: lightgreen; padding: 20px; text-align: center; font-weight: bold;">
+                Mobile View (Green)
+            </div>
+            <style>
+                @media (min-width: 481px) {
+                    #media-demo-2 {
+                        background: lightcoral !important;
+                    }
+                    #media-demo-2::after {
+                        content: " → Tablet View (Red)";
+                    }
+                }
+                @media (min-width: 769px) {
+                    #media-demo-2 {
+                        background: lightblue !important;
+                    }
+                    #media-demo-2::after {
+                        content: " → Desktop View (Blue)";
+                    }
+                }
+            </style>
+            <div style="background: #f0f0f0; padding: 10px; margin-top: 10px;">
+                <code>/* Default: Mobile */</code><br>
+                <code>@media (min-width: 481px) { /* Tablet */ }</code><br>
+                <code>@media (min-width: 769px) { /* Desktop */ }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> min-width matlab "jab screen is size se BADI ho" - Mobile-first approach!<br>
+            <strong>Kab use kare:</strong> Modern approach - pehle mobile design, phir bade screens.<br>
+            <strong>Kaise kaam karta hai:</strong> Default green (mobile), 481px+ red (tablet), 769px+ blue (desktop). Resize karke dekho!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>4. Common Breakpoints</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px; line-height: 2;">
+                <strong>📱 Mobile:</strong> 320px - 480px<br>
+                <strong>📱 Large Mobile:</strong> 481px - 768px<br>
+                <strong>💻 Tablet:</strong> 769px - 1024px<br>
+                <strong>🖥️ Desktop:</strong> 1025px - 1200px<br>
+                <strong>🖥️ Large Desktop:</strong> 1201px+
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px; border: 1px solid #ddd;">
+                <code>@media (max-width: 480px) { /* Mobile */ }</code><br>
+                <code>@media (max-width: 768px) { /* Tablet */ }</code><br>
+                <code>@media (max-width: 1024px) { /* Small Desktop */ }</code><br>
+                <code>@media (min-width: 1200px) { /* Large Desktop */ }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Industry standard screen sizes jahan layout change karte hain.<br>
+            <strong>Kab use kare:</strong> Starting point ke liye - sabse common devices cover ho jayenge.<br>
+            <strong>Kaise kaam karta hai:</strong> In widths pe design test karo. Apne content ke base pe adjust kar sakte ho.
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>5. Fluid Layouts - Percentage Width</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 10px;">
+                <div style="width: 100%; background: lightblue; padding: 10px; margin-bottom: 10px;">Width: 100% (Full width)</div>
+                <div style="width: 50%; background: lightcoral; padding: 10px; margin-bottom: 10px;">Width: 50% (Half width)</div>
+                <div style="width: 33.33%; background: lightgreen; padding: 10px;">Width: 33.33% (One-third)</div>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>.box { width: 100%; }</code> ← Mobile<br>
+                <code>@media (min-width: 768px) { .box { width: 50%; } }</code> ← Tablet<br>
+                <code>@media (min-width: 1024px) { .box { width: 33.33%; } }</code> ← Desktop
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Fixed pixels ki jagah percentage use karna - parent ke according adjust hoga.<br>
+            <strong>Kab use kare:</strong> Flexible layouts ke liye - screen size change hone pe automatically adjust.<br>
+            <strong>Kaise kaam karta hai:</strong> 50% = parent ki half width. Browser resize karo, width adjust hoti hai!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>6. Container with max-width</h3>
+        <div class="output">
+            <div style="max-width: 600px; width: 100%; margin: 0 auto; background: lightblue; padding: 20px; box-sizing: border-box;">
+                Container: max-width: 600px, width: 100%<br>
+                <small>Window choti karo - 600px se kam me 100% width lega, zyada me 600px max!</small>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>.container {<br>
+                &nbsp;&nbsp;max-width: 1200px;<br>
+                &nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;margin: 0 auto;<br>
+                &nbsp;&nbsp;padding: 0 20px;<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Container ki maximum width set karna - bade screens pe content bahut wide na ho.<br>
+            <strong>Kab use kare:</strong> Main content wrapper ke liye - readability improve hoti hai.<br>
+            <strong>Kaise kaam karta hai:</strong> max-width: 1200px (bada se zyada nahi), width: 100% (choti screens pe full), margin: 0 auto (center align).
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>7. Responsive Images</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect fill='%234CAF50' width='800' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EResponsive Image%3C/text%3E%3C/svg%3E" 
+                     style="max-width: 100%; height: auto; display: block;">
+                <p style="margin-top: 10px;">Window resize karo - image shrink hoti hai but aspect ratio same rahta hai!</p>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>img {<br>
+                &nbsp;&nbsp;max-width: 100%;<br>
+                &nbsp;&nbsp;height: auto;<br>
+                &nbsp;&nbsp;display: block;<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Images ko responsive banana - container se badi na ho.<br>
+            <strong>Kab use kare:</strong> Har image ke liye - mobile pe overflow nahi hogi.<br>
+            <strong>Kaise kaam karta hai:</strong> max-width: 100% (parent se bada nahi), height: auto (proportions maintain), display: block (extra space remove).
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>8. Mobile-First Approach Example</h3>
+        <div class="output">
+            <div id="mobile-first-demo" style="display: flex; flex-direction: column; gap: 10px; background: #f0f0f0; padding: 10px;">
+                <div style="background: lightblue; padding: 20px; text-align: center;">Box 1</div>
+                <div style="background: lightcoral; padding: 20px; text-align: center;">Box 2</div>
+                <div style="background: lightgreen; padding: 20px; text-align: center;">Box 3</div>
+            </div>
+            <style>
+                @media (min-width: 768px) {
+                    #mobile-first-demo {
+                        flex-direction: row !important;
+                    }
+                }
+            </style>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>/* Mobile (Default): Vertical stack */</code><br>
+                <code>.container { display: flex; flex-direction: column; }</code><br><br>
+                <code>/* Tablet & Up: Horizontal */</code><br>
+                <code>@media (min-width: 768px) {<br>
+                &nbsp;&nbsp;.container { flex-direction: row; }<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Pehle mobile design (simple), phir badi screens ke liye enhance karo.<br>
+            <strong>Kab use kare:</strong> Modern best practice - mobile traffic zyada hai.<br>
+            <strong>Kaise kaam karta hai:</strong> Default vertical (mobile easy), 768px+ horizontal (desktop space utilize). Window resize karo!
+        </div>
+    </div>
+
+    <h3 style="background: #333; color: white; padding: 10px; margin-top: 40px;">💪 LEVEL 2 - INTERMEDIATE</h3>
+    
+    <div class="property">
+        <h3>9. CSS Units - rem, em, vw, vh</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px;">
+                <div style="font-size: 16px; background: lightblue; padding: 10px; margin-bottom: 10px;">
+                    16px (Fixed) - hamesha 16px
+                </div>
+                <div style="font-size: 1rem; background: lightcoral; padding: 10px; margin-bottom: 10px;">
+                    1rem (Root relative) - root font-size ke equal
+                </div>
+                <div style="font-size: 2em; background: lightgreen; padding: 10px; margin-bottom: 10px; font-size: 1em;">
+                    <span style="font-size: 2em;">2em (Parent relative)</span> - parent ke double
+                </div>
+                <div style="font-size: 3vw; background: lightyellow; padding: 10px; margin-bottom: 10px;">
+                    3vw (Viewport width) - screen width ka 3%
+                </div>
+                <div style="height: 20vh; background: lavender; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                    20vh (Viewport height) - screen height ka 20%
+                </div>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>font-size: 16px;</code> ← Fixed<br>
+                <code>font-size: 1rem;</code> ← Root relative (usually 16px)<br>
+                <code>font-size: 2em;</code> ← Parent relative<br>
+                <code>font-size: 3vw;</code> ← 3% of viewport width<br>
+                <code>height: 20vh;</code> ← 20% of viewport height
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Different measurement units - fixed aur relative.<br>
+            <strong>Kab use kare:</strong> rem (consistent sizing), em (component-based), vw/vh (full-screen sections).<br>
+            <strong>Kaise kaam karta hai:</strong> px = fixed, rem = root based (1rem = 16px default), em = parent based, vw/vh = screen based. Window resize karo aur vw/vh ka effect dekho!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>10. Flexbox for Responsive - flex-wrap</h3>
+        <div class="output">
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; background: #f0f0f0; padding: 10px;">
+                <div style="flex: 1 1 200px; background: lightblue; padding: 20px; text-align: center;">Item 1<br><small>(min: 200px)</small></div>
+                <div style="flex: 1 1 200px; background: lightcoral; padding: 20px; text-align: center;">Item 2<br><small>(min: 200px)</small></div>
+                <div style="flex: 1 1 200px; background: lightgreen; padding: 20px; text-align: center;">Item 3<br><small>(min: 200px)</small></div>
+                <div style="flex: 1 1 200px; background: lightyellow; padding: 20px; text-align: center;">Item 4<br><small>(min: 200px)</small></div>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>.container {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-wrap: wrap;<br>
+                &nbsp;&nbsp;gap: 10px;<br>
+                }<br>
+                .item {<br>
+                &nbsp;&nbsp;flex: 1 1 200px;<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Flexbox items automatically wrap ho jate hain jab space nahi hota.<br>
+            <strong>Kab use kare:</strong> Card layouts, product grids - automatic responsive without media queries!<br>
+            <strong>Kaise kaam karta hai:</strong> flex-wrap: wrap (next line pe jao), flex: 1 1 200px (grow, shrink, min 200px). Window resize karo - items automatically adjust!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>11. CSS Grid for Responsive - auto-fit</h3>
+        <div class="output">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; background: #f0f0f0; padding: 10px;">
+                <div style="background: lightblue; padding: 20px; text-align: center;">1</div>
+                <div style="background: lightcoral; padding: 20px; text-align: center;">2</div>
+                <div style="background: lightgreen; padding: 20px; text-align: center;">3</div>
+                <div style="background: lightyellow; padding: 20px; text-align: center;">4</div>
+                <div style="background: lavender; padding: 20px; text-align: center;">5</div>
+                <div style="background: lightpink; padding: 20px; text-align: center;">6</div>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>.grid {<br>
+                &nbsp;&nbsp;display: grid;<br>
+                &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));<br>
+                &nbsp;&nbsp;gap: 10px;<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> Automatic responsive grid - columns automatically adjust.<br>
+            <strong>Kab use kare:</strong> Image galleries, product listings - no media queries needed!<br>
+            <strong>Kaise kaam karta hai:</strong> auto-fit (jitne fit ho sake), minmax(150px, 1fr) (minimum 150px, maximum equal share). Window resize karo - magic dekho!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>12. Responsive Typography - clamp()</h3>
+        <div class="output">
+            <div style="background: #f0f0f0; padding: 20px;">
+                <h2 style="font-size: clamp(1.5rem, 5vw, 3rem); margin: 0;">Responsive Heading</h2>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.5rem); margin: 10px 0;">
+                    Yeh text automatically resize hota hai! Window ko chhota-bada karo aur dekho font size smoothly adjust hota hai.
+                </p>
+            </div>
+            <div style="background: white; padding: 10px; margin-top: 10px;">
+                <code>h2 {<br>
+                &nbsp;&nbsp;font-size: clamp(1.5rem, 5vw, 3rem);<br>
+                }<br>
+                p {<br>
+                &nbsp;&nbsp;font-size: clamp(1rem, 2.5vw, 1.5rem);<br>
+                }</code>
+            </div>
+        </div>
+        <div class="explanation">
+            <strong>Kya hai:</strong> clamp(minimum, preferred, maximum) - fluid typography without media queries!<br>
+            <strong>Kab use kare:</strong> Headings aur body text - smooth scaling chahiye.<br>
+            <strong>Kaise kaam karta hai:</strong> clamp(1.5rem, 5vw, 3rem) = minimum 1.5rem, prefer 5% viewport, max 3rem. Automatically scale hota hai!
+        </div>
+    </div>
+    
+    <div class="property">
+        <h3>13. Responsive Navigation - Mobile Menu</h3>
+        <div class="output">
+            <div id="nav-demo" style="background: #333; color: white;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px;">
+                    <div style="font-size: 20px; font-weight: bold;">LOGO</div>
+                    <button onclick="document.getElementById('menu').style.display = document.getElementById('menu').style.display === 'none' ? 'block' : 'none'" 
+                            style="background: white; border: none; padding: 10px 15px; cursor: pointer; display: none;" 
+                            id="hamburger">☰</button>
+                    <div id="menu" style="display: flex; gap: 20px;">
+                        <a href="#" style="color: white; text-decoration: none;">Home</a>
+                        <a href="#" style="color: white; text-decoration: none;">About</a>
+                        <a href="#" style="color: white; text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    #hamburger { display: block !important; }
+                    #menu {
+                        display: none !important;
+                        flex-direction: column !important;
+                        position: absolute;
+                        background: #333;
+                        width: 100%;
+                        left: 0;
+                        padding: 20px;
+                    }
+           
