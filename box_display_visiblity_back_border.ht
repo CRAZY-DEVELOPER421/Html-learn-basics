@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Concepts - Interactive Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .concept {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .concept h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .concept p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .demo-box {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+        }
+        
+        code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Box Model Examples */
+        .box-model-demo {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #667eea;
+            margin: 20px;
+            background-color: #ffd700;
+        }
+        
+        .box-sizing-normal {
+            box-sizing: content-box;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid red;
+            background: #ffcccb;
+            margin-bottom: 10px;
+        }
+        
+        .box-sizing-border {
+            box-sizing: border-box;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid green;
+            background: #90ee90;
+        }
+        
+        /* Font Examples */
+        .font-demo-1 {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        
+        .font-demo-2 {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        
+        .text-demo-1 {
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+        
+        .text-demo-2 {
+            text-align: right;
+            text-transform: capitalize;
+            line-height: 2;
+        }
+        
+        /* Background Examples */
+        .bg-demo-1 {
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .bg-demo-2 {
+            background-image: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 3px solid #333;
+        }
+        
+        /* Display Examples */
+        .display-block {
+            display: block;
+            background: #ffcccb;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        
+        .display-inline {
+            display: inline;
+            background: #90ee90;
+            padding: 10px;
+        }
+        
+        .display-inline-block {
+            display: inline-block;
+            background: #add8e6;
+            padding: 10px;
+            margin: 5px;
+        }
+        
+        .display-none {
+            display: none;
+        }
+        
+        .visibility-hidden {
+            visibility: hidden;
+        }
+        
+        .opacity-demo {
+            opacity: 0.5;
+            background: #667eea;
+            color: white;
+            padding: 15px;
+        }
+        
+        .overflow-demo {
+            width: 300px;
+            height: 100px;
+            border: 2px solid #667eea;
+            overflow: scroll;
+            padding: 10px;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 CSS Concepts - Visual Learning Guide</h1>
+        
+        <!-- Box Model Section -->
+        <div class="section">
+            <h2>📦 4. Box Model</h2>
+            
+            <div class="concept">
+                <h3>Box Model Kya Hai?</h3>
+                <p>Har HTML element ek box ki tarah hota hai jisme 4 parts hote hain:</p>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Content:</strong> Actual content (text, image)</li>
+                    <li><strong>Padding:</strong> Content ke around space (andar ki taraf)</li>
+                    <li><strong>Border:</strong> Padding ke around boundary line</li>
+                    <li><strong>Margin:</strong> Border ke bahar space (dusre elements se distance)</li>
+                </ul>
+                
+                <div class="demo-box">
+                    <div class="box-model-demo">
+                        Content Area<br>
+                        Padding: 20px<br>
+                        Border: 5px solid blue<br>
+                        Margin: 20px
+                    </div>
+                </div>
+            </div>
+            
+            <div class="concept">
+                <h3>box-sizing: border-box</h3>
+                <p><code>box-sizing: content-box</code> (default): Width sirf content ki hoti hai</p>
+                <p><code>box-sizing: border-box</code>: Width mein padding aur border bhi include hote hain</p>
+                
+                <div class="demo-box">
+                    <div class="box-sizing-normal">
+                        content-box<br>
+                        Total width = 250px<br>
+                        (200 + 20*2 + 5*2)
+                    </div>
+                    <div class="box-sizing-border">
+                        border-box<br>
+                        Total width = 200px<br>
+                        (padding+border included)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Text & Font Section -->
+        <div class="section">
+            <h2>✍️ 5. Text & Font Styling</h2>
+            
+            <div class="concept">
+                <h3>Font Properties</h3>
+                <div class="demo-box">
+                    <div class="font-demo-1">
+                        <code>font-family: Arial</code><br>
+                        <code>font-size: 18px</code><br>
+                        <code>font-weight: normal</code><br>
+                        Yeh normal text hai with Arial font
+                    </div>
+                    <br>
+                    <div class="font-demo-2">
+                        <code>font-family: Courier New</code><br>
+                        <code>font-size: 24px</code><br>
+                        <code>font-weight: bold</code><br>
+                        <code>letter-spacing: 3px</code><br>
+                        Bold Text with Letter Spacing
+                    </div>
+                </div>
+            </div>
+            
+            <div class="concept">
+                <h3>Text Styling</h3>
+                <div class="demo-box">
+                    <div class="text-demo-1">
+                        text-align: center<br>
+                        text-transform: uppercase<br>
+                        text-decoration: underline
+                    </div>
+                    <br>
+                    <div class="text-demo-2">
+                        text-align: right<br>
+                        text-transform: capitalize<br>
+                        line-height: 2 (double spacing)<br>
+                        Yeh line double height ke saath hai
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background & Border Section -->
+        <div class="section">
+            <h2>🎨 6. Background & Border</h2>
+            
+            <div class="concept">
+                <h3>Background Properties</h3>
+                <div class="demo-box">
+                    <div class="bg-demo-1">
+                        <code>background-color: #667eea</code><br>
+                        <code>border-radius: 10px</code><br>
+                        Simple solid color background
+                    </div>
+                    <br>
+                    <div class="bg-demo-2">
+                        <code>background-image: gradient</code><br>
+                        <code>border: 3px solid #333</code><br>
+                        <code>border-radius: 20px</code><br>
+                        Gradient background with border
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Display Section -->
+        <div class="section">
+            <h2>👁️ 7. Display, Visibility & Overflow</h2>
+            
+            <div class="concept">
+                <h3>Display Property</h3>
+                <p><strong>display: block</strong> - Full width leta hai, naye line pe start hota hai</p>
+                <div class="demo-box">
+                    <div class="display-block">Block Element 1</div>
+                    <div class="display-block">Block Element 2</div>
+                </div>
+                
+                <p><strong>display: inline</strong> - Sirf content jitna width, same line pe rahta hai</p>
+                <div class="demo-box">
+                    <span class="display-inline">Inline 1</span>
+                    <span class="display-inline">Inline 2</span>
+                    <span class="display-inline">Inline 3</span>
+                </div>
+                
+                <p><strong>display: inline-block</strong> - Inline ki tarah same line pe, but width/height set kar sakte hain</p>
+                <div class="demo-box">
+                    <div class="display-inline-block">Box 1</div>
+                    <div class="display-inline-block">Box 2</div>
+                    <div class="display-inline-block">Box 3</div>
+                </div>
+            </div>
+            
+            <div class="concept">
+                <h3>Visibility & Opacity</h3>
+                <div class="demo-box">
+                    <p><code>opacity: 0.5</code> - 50% transparent</p>
+                    <div class="opacity-demo">
+                        Main 50% transparent hun but jagah leta hun
+                    </div>
+                    
+                    <p style="margin-top: 15px;"><code>visibility: hidden</code> - Dikhta nahi but jagah leta hai</p>
+                    <div>Pehla box</div>
+                    <div class="visibility-hidden">Main hidden hun (jagah occupied hai)</div>
+                    <div>Teesra box</div>
+                    
+                    <p style="margin-top: 15px;"><code>display: none</code> - Na dikhta hai, na jagah leta hai</p>
+                </div>
+            </div>
+            
+            <div class="concept">
+                <h3>Overflow Property</h3>
+                <p>Jab content box se bada ho jaye:</p>
+                <div class="demo-box">
+                    <div class="overflow-demo">
+                        <code>overflow: scroll</code><br><br>
+                        Yeh bahut lamba content hai jo box se bahar ja raha hai.
+                        Isiliye scroll bars aa gaye hain. Tum scroll kar ke pura content 
+                        padh sakte ho. Overflow property control karta hai ki extra content 
+                        ka kya karna hai. Options hain: hidden (chupa do), scroll (scrollbar do),
+                        auto (zarurat hone pe scrollbar do), visible (overflow hone do).
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white; border-bottom-color: white;">📚 Instructions</h2>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Har section mein live examples diye gaye hain</li>
+                <li>Code snippets <code>dark background</code> mein likhe hain</li>
+                <li>Visual demos colored boxes mein hain</li>
+                <li>Browser DevTools (F12) open karke inspect karo</li>
+                <li>Values change karke experiment karo</li>
+                <li>Har property ka effect seedha dikh jayega</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
